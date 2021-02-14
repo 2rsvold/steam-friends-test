@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AuthSteamController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('logout', [AuthSteamController::class, 'Logout']);
+Route::get('login', [AuthSteamController::class, 'Authenticate'])->name('auth.steam');
+Route::get('/', [HomeController::class, 'Home']);
