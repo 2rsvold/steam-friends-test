@@ -20,11 +20,9 @@
                         </div>
                         <div class="col-10">
                             <h3>Hello, {{ Session::get('user.name') }}!</h3>
+                            <p>You can now view your friends below.</p>
                             <p>
-                                You can now view your friends below.
-                            </p>
-                            <p>
-                                <a class="btn btn-danger btn-sm" href="/logout">Logout</a>
+                                <a class="btn btn-danger btn-sm" href="{{ route('auth.logout') }}">Logout</a>
                             </p>
                         </div>
                     </div>
@@ -35,7 +33,7 @@
                 </div>
             @else
                 <p>
-                    <a class="btn btn-sm btn-success" href="/login">Login to view your friends</a>
+                    <a class="btn btn-sm btn-success" href="{{ route('auth.steam') }}">Login to view your friends</a>
                 </p>
             @endif
         </div>

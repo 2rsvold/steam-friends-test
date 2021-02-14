@@ -19,17 +19,4 @@ class Authenticate extends Middleware
             return route('auth.steam');
         }
     }
-
-    /**
-     * Handle session login of steam user
-     */
-    public function handle($request, Closure $next, ...$guards)
-    {
-        if (!empty(session('authenticated'))) {
-            $request->session()->put('authenticated', time());
-            return $next($request);
-        }
-
-        return route('auth.steam');
-    }
 }

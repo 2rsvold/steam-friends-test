@@ -16,6 +16,6 @@ use App\Http\Controllers\AuthSteamController;
 |
 */
 
-Route::get('logout', [AuthSteamController::class, 'Logout']);
+Route::get('logout', [AuthSteamController::class, 'Logout'])->name('auth.logout');
 Route::get('login', [AuthSteamController::class, 'Authenticate'])->name('auth.steam');
 Route::get('/', [HomeController::class, 'Home']);

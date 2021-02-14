@@ -67,6 +67,11 @@ class AuthSteamController extends Controller
         return $this->redirectToSteam();
     }
 
+    /**
+     * Logout user
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function Logout(Request $request)
     {
         Session::flush();
